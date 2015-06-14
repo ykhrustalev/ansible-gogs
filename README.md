@@ -42,7 +42,7 @@ Gogs service hostname
 
 Gogs service email user
 
-    gogs_app_user: gogs@example.com
+    gogs_app_email: gogs@example.com
 
 Gogs service bind address and url
 
