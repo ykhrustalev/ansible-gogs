@@ -1,0 +1,29 @@
+---
+- include: os.yml
+  when: ansible_os_family == 'Debian'
+  tags:
+    - gogs-os
+    - gogs
+
+- include: packages.yml
+  when: ansible_os_family == 'Debian'
+  tags:
+    - gogs-packages
+    - gogs
+
+- include: db.yml
+  when: ansible_os_family == 'Debian'
+  tags:
+    - gogs-db
+    - gogs
+
+- include: archive.yml
+  when: ansible_os_family == 'Debian'
+  tags:
+    - gogs-archive
+    - gogs
+
+- include: app.yml
+  when: ansible_os_family == 'Debian'
+  tags:
+    - gogs

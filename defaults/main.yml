@@ -1,0 +1,25 @@
+---
+gogs_db_name: gogs
+gogs_db_user: gogs
+gogs_db_password: jh3wk92km1e09
+gogs_db_host: 127.0.0.1
+gogs_db_port: 5432
+
+gogs_app_user: git
+gogs_app_group: git
+gogs_app_home: /home/git/gogs
+gogs_repos_home: /home/git/gogs-repositories
+
+gogs_app_hostname: gogs.example.com
+gogs_app_user: gogs@example.com
+gogs_app_url: http://{{app_hostname}}/
+gogs_app_bind_address: localhost
+gogs_app_bind_port: 3000
+
+gogs_dist_version: v0.6.1
+gogs_dist_url: https://github.com/gogits/gogs/releases/download/{{gogs_dist_version}}/linux_amd64.zip
+gogs_dist_sha256: ab4d8341d1c14e753914b68b3ec0c9b169c361123dcef541ff34444b1e54812b
+
+gogs_tmp_folder: ~/
+
+

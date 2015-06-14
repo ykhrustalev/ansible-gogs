@@ -1,0 +1,16 @@
+---
+galaxy_info:
+  author: ykhrustalev
+  description: gogs service setup
+  license: MIT
+  min_ansible_version: 1.2
+  platforms:
+  - name: Debian
+    versions:
+    - jessie
+    - squeeze
+    - wheezy
+  categories:
+  - packaging
+  - system
+dependencies: []

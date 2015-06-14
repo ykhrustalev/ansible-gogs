@@ -1,0 +1,47 @@
+RUN_USER = {{gogs_app_user}}
+RUN_MODE = prod
+
+[database]
+DB_TYPE = postgres
+HOST = {{gogs_db_host}}:{{gogs_db_port}}
+NAME = {{gogs_db_name}}
+USER = {{gogs_db_user}}
+PASSWD = {{gogs_db_password}}
+SSL_MODE = disable
+PATH = data/gogs.db
+
+[repository]
+ROOT = {{gogs_repos_home}}
+
+[server]
+DOMAIN = {{gogs_app_hostname}}
+HTTP_ADDR = {{gogs_app_bind_address}}
+HTTP_PORT = {{gogs_app_bind_port}}
+ROOT_URL = {{gogs_app_url}}
+DISABLE_ROUTER_LOG = true
+
+[oauth]
+ENABLED = true
+
+[mailer]
+ENABLED = true
+HOST = localhost
+USER = {{gogs_app_user}}
+PASSWD =
+
+[service]
+DISABLE_REGISTRATION = true
+REGISTER_EMAIL_CONFIRM = true
+ENABLE_NOTIFY_MAIL = true
+REQUIRE_SIGNIN_VIEW = true
+
+[session]
+PROVIDER = memory
+
+[log]
+MODE = file
+LEVEL = Info
+
+[security]
+INSTALL_LOCK = true
+SECRET_KEY = ppCav7KRaYax2ie

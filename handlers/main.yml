@@ -1,0 +1,13 @@
+---
+- name: restart nginx
+  service:
+    name: nginx
+    state: restarted
+
+- name: restart gogs
+  service:
+    name: gogs
+    state: restarted
+
+- name: register gogs init
+  shell: update-rc.d gogs defaults

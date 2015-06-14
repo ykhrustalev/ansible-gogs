@@ -1,0 +1,27 @@
+---
+- name: Download gogs
+  get_url: >
+    url={{gogs_dist_url}}
+    dest=/tmp/linux_amd64.zip
+    sha256sum={{gogs_dist_sha256}}
+  register: gogs_new_archive
+
+- name: Prepare clean temp folder
+  file: path={{gogs_tmp_folder}} state=absent
+  when: gogs_new_archive|changed
+
+- name: Prepare create temp folder
+  file: path={{gogs_tmp_folder}} state=directory
+  when: gogs_new_archive|changed
+
+- name: Stop gogs service before upgrade
+  shell: service gogs stop || true
+  when: gogs_new_archive|changed
+
+- name: Extract bundle
+  unarchive: src=/tmp/linux_amd64.zip dest={{gogs_tmp_folder}} copy=no
+  when: gogs_new_archive|changed
+
+- name: Copy gogs sources
+  shell: cp -rp {{gogs_tmp_folder}}/gogs/* {{gogs_app_home}}
+  when: gogs_new_archive|changed
