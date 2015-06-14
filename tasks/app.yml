@@ -31,27 +31,5 @@
     owner=root
     group=root
 
-- name: Make sure nginx config installed
-  template: >
-    src=etc/nginx/sites-available/gogs.conf.j2
-    dest=/etc/nginx/sites-available/gogs.conf
-    mode=0755
-    owner=root
-    group=root
-  notify: restart nginx
-
-- name: Make sure nginx config enabled
-  file: >
-    src=/etc/nginx/sites-available/gogs.conf
-    dest=/etc/nginx/sites-enabled/gogs.conf
-    owner=root
-    group=root
-    state=link
-  notify: restart nginx
-
-- name: Make sure default nginx config is removed
-  file: dest=/etc/nginx/sites-enabled/default state=absent
-  notify: restart nginx
-
 - name: Make sure app is running
   service: name=gogs state=running

@@ -32,6 +32,10 @@ Where to keep git repositories
 
     gogs_repos_home: /home/git/gogs-repositories
     
+Logs folder
+
+    gogs_log_root: /var/log/gogs
+    
 Gogs service hostname
 
     gogs_app_hostname: gogs.example.com
@@ -42,7 +46,7 @@ Gogs service email user
 
 Gogs service bind address and url
 
-    gogs_app_url: http://{{app_hostname}}/
+    gogs_app_url: http://{{gogs_app_hostname}}/
     gogs_app_bind_address: localhost
     gogs_app_bind_port: 3000
     

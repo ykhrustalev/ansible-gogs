@@ -16,3 +16,4 @@
   with_items:
     - "{{gogs_app_home}}"
     - "{{gogs_repos_home}}"
+    - "{{gogs_log_root}}"

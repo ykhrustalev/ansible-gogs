@@ -8,7 +8,6 @@
     install_recommends=no
   with_items:
     - git
-    - nginx
     - postgresql
     # for ansible
     - libpq-dev

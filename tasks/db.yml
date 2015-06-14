@@ -1,6 +1,6 @@
 ---
 
-- name: ensure database is created
+- name: Ensure database is created
   sudo_user: postgres
   postgresql_db: >
     name={{gogs_db_name}}
@@ -9,7 +9,7 @@
     lc_ctype='en_US.UTF-8'
     template='template0'
 
-- name: ensure user has access to database
+- name: Ensure user has access to database
   sudo_user: postgres
   postgresql_user: >
     db={{gogs_db_name}}
@@ -17,7 +17,7 @@
     password={{gogs_db_password}}
     priv=ALL
 
-- name: ensure user does not have unnecessary privilege
+- name: Ensure user does not have unnecessary privilege
   sudo_user: postgres
   postgresql_user: >
     name={{gogs_db_user}}
