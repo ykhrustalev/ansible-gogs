@@ -1,18 +1,19 @@
 ---
 
-- name: ensure group is created
+- name: Ensure group is created
   user: name={{gogs_app_group}} home=/home/git
 
-- name: ensure user is created
+- name: Ensure user is created
   user: name={{gogs_app_user}} group={{gogs_app_group}}
 
-- name: ensure app folder is created
+- name: Ensure app folder is created
   file: >
     path={{item}}
     state=directory
     mode=0755
     owner={{gogs_app_user}}
     group={{gogs_app_group}}
+    recurse=yes
   with_items:
     - "{{gogs_app_home}}"
     - "{{gogs_repos_home}}"
