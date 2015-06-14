@@ -1,7 +1,7 @@
 ---
 galaxy_info:
-  author: ykhrustalev
-  description: gogs service setup
+  author: Yurit Khrustalev
+  description: Gogs server
   license: MIT
   min_ansible_version: 1.2
   platforms:
@@ -11,6 +11,7 @@ galaxy_info:
     - squeeze
     - wheezy
   categories:
-  - packaging
+  - development
   - system
+  - web
 dependencies: []
